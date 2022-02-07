@@ -1,7 +1,11 @@
 @use "sass:math";
 
-$basePixels: 16;
+$browser-context: 16;
 
-@function rem($px, $basePixels) {
-  @return (math.div($px, $basePixels)) * 1rem;
+@function rem($pixels, $context: $browser-context) {
+  @return math.div($pixels, $context) * 1rem;
+}
+
+@function vw($pixels, $content: 750) {
+  @return math.div($pixels, $context) * 100vw;
 }
